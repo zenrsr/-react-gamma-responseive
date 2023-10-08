@@ -1,10 +1,10 @@
 import './index.css'
 
 const TabItem = ({isActive, updateActiveTab, tabDetails}) => {
-  const {id, displayText} = tabDetails
+  const {tabId, displayText} = tabDetails
 
   const clickActiveTab = () => {
-    updateActiveTab(id)
+    updateActiveTab(tabId)
   }
 
   const activeTabClass = isActive ? 'active-tab' : ''

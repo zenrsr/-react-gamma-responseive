@@ -306,12 +306,13 @@ class AppStore extends Component {
 
   render() {
     const {activeTab, searchInput} = this.state
-    console.log(activeTab)
-    const filteredList = appsList
-      .filter(eachItem => eachItem.category === activeTab)
-      .filter(eachAppItem =>
-        eachAppItem.appName.toLowerCase().includes(searchInput.toLowerCase()),
-      )
+    const tabBasedApps = appsList.filter(
+      eachSearchedApp => eachSearchedApp.category === activeTab,
+    )
+
+    const filteredList = tabBasedApps.filter(eachApp =>
+      eachApp.appName.toLowerCase().includes(searchInput.toLowerCase()),
+    )
 
     return (
       <div className="container">
